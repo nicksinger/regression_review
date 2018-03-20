@@ -1,0 +1,14 @@
+# Most recent build:
+curl https://openqa.suse.de/group_overview/112.json | jq ".build_results[0].build"
+
+
+# API route for all jobs in this group:
+https://openqa.suse.de/api/v1/jobs\?build\=513.1\&groupid\=112
+
+
+# List failing modules
+ # List all modules
+ curl -s https://openqa.suse.de/api/v1/job_groups/112/jobs
+
+ # List testresult for all modules
+ curl -s https://openqa.suse.de/api/v1/jobs/1549263/details | jq ".job.testresults"
